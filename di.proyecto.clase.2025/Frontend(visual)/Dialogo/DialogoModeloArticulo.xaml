@@ -53,9 +53,11 @@
         <!--NOMBRE-->
         <TextBox
             x:Name="txtNombre"
-            Text="{Binding modeloArticulo.Nombre}"
+            Text="{Binding modeloArticulo.Nombre,ValidatesOnDataErrors=True,
+            NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
             Style="{StaticResource MaterialDesignTextBox}"
             mat:HintAssist.Hint="Nombre*"
+            
             FontWeight="Bold"
             Grid.Row="1"
             Grid.Column="0"
@@ -81,7 +83,8 @@
             BorderBrush="Gray"
             x:Name="cmbTipoArticulo"
             ItemsSource="{Binding listaTiposArticulos}"
-            SelectedItem="{Binding modeloArticulo.TipoNavigation}"
+            SelectedItem="{Binding modeloArticulo.TipoNavigation,ValidatesOnDataErrors=True,
+            NotifyOnValidationError=True}"
             DisplayMemberPath="Nombre"/>
         <!--para que salga solo el nombre-->
         <!--DESCRIPCION-->

@@ -1,6 +1,7 @@
 ﻿using di.proyecto.clase._2025.MVVM;
 using MahApps.Metro.Controls;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace di.proyecto.clase._2025.Frontend_visual_.Dialogo
 {
@@ -19,9 +20,11 @@ namespace di.proyecto.clase._2025.Frontend_visual_.Dialogo
         private async void diagModeloArticulo_Loaded(object sender, RoutedEventArgs e)
         {
             await _mvArticulo.Inicializa();
-            //Esta linia enlaza la interfaz con el MV
+            this.AddHandler(Validation.ErrorEvent, new RoutedEventHandler(_mvArticulo.OnErrorEvent));
+            //Esta línea enlaza la interfaz con el MV
             //SI NO SE PONE DATACONTEXT NO FUNCIONARÁ EL ITEMSOURCE
             DataContext = _mvArticulo;
+           
         }
 
         //Botones por activar

@@ -13,9 +13,8 @@ namespace di.proyecto.clase._2025.Frontend.MVVM.Base
         /// Botón del formulario que queremos que se active/desactive en función
         /// de si hay errores en la validación de los campos
         /// </summary>
-        public bool HasErrors => errorCount > 0;
 
-        
+
         /// <summary>
         /// Variable que llev la cuenta de los errores que hay en el formulario
         /// las variables contador siempre tienen que ser privadas, sino se descontrolan
@@ -72,7 +71,7 @@ namespace di.proyecto.clase._2025.Frontend.MVVM.Base
                         throw new Exception("Acción desconocida");
                     }
             }
-            //btnGuardar.IsEnabled = errorCount == 0;
+            UpdateHasErrors();
         }
         // Métodos CRUD genéricos asíncronos con manejo de excepciones
         /// <summary>
@@ -151,6 +150,13 @@ namespace di.proyecto.clase._2025.Frontend.MVVM.Base
             }
         }
 
+        public bool HasErrors
+        {
+            get => _hasErrors;
+            set => SetProperty(ref _hasErrors, value);
+        }
+        private bool _hasErrors;
+
         protected async Task<bool> AddOrUpdateAsync<T>(IGenericRepository<T> repo, T entity) where T : class
         {
             try
@@ -189,5 +195,10 @@ namespace di.proyecto.clase._2025.Frontend.MVVM.Base
             }
         }
 
+        private void UpdateHasErrors()
+        {
+            HasErrors = errorCount > 0;
+
+        }
     }
 }

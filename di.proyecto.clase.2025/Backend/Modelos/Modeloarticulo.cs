@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using di.proyecto.clase._2025.Frontend.MVVM.Base;
 using Microsoft.EntityFrameworkCore;
 
 namespace di.proyecto.clase._2025.Backend.Modelos;
 
 [Table("modeloarticulo")]
 [Index("Tipo", Name = "fk_tipoarticulos_modeloarticulo_idx")]
-public partial class Modeloarticulo
+public partial class Modeloarticulo : ValidatableViewModel 
 {
     /// <summary>
     /// Es un catalogo de articulos existentes. De cada modelo puede haber varias unidades con distintos numeros de serie, etc
@@ -19,6 +20,7 @@ public partial class Modeloarticulo
 
     [Column("nombre")]
     [StringLength(45)]
+    [Required]
     public string? Nombre { get; set; }
 
     [Column("descripcion", TypeName = "mediumtext")]
@@ -26,6 +28,7 @@ public partial class Modeloarticulo
 
     [Column("marca")]
     [StringLength(255)]
+    [Required]
     public string? Marca { get; set; }
 
     [Column("modelo")]
@@ -43,5 +46,6 @@ public partial class Modeloarticulo
 
     [ForeignKey("Tipo")]
     [InverseProperty("Modeloarticulos")]
+    [Required]
     public virtual Tipoarticulo? TipoNavigation { get; set; }
 }

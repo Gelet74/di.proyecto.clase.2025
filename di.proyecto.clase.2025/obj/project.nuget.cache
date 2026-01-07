@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/dQ7I5/avCA=",
+  "dgSpecHash": "qRc0PceU3y8=",
   "success": true,
-  "projectFilePath": "D:\\2º DAM\\DISEÑO INTERFACE\\1 EVALUACION\\Inma\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj",
+  "projectFilePath": "C:\\Users\\windows10\\Desktop\\2º DAM\\DISEÑO INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\windows10\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\windows10\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

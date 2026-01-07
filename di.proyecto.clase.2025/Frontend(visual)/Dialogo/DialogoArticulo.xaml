@@ -115,6 +115,7 @@
             <TextBox x:Name="SerieTextBox"
                      MaxLength="45"
                      FontWeight="Bold"
+                     Text="{Binding articulo.Numserie, UpdateSourceTrigger=PropertyChanged}"
                      mat:HintAssist.Hint="Numero de Serie* (Debe ser único)"
                      mat:HintAssist.IsFloating="True"
                      VerticalAlignment="Top"

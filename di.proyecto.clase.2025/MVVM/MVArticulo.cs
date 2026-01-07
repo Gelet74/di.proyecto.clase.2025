@@ -3,11 +3,7 @@ using di.proyecto.clase._2025.Backend.Servicios;
 using di.proyecto.clase._2025.Backend.Servicios_Repositorio_;
 using di.proyecto.clase._2025.Frontend.Mensajes;
 using di.proyecto.clase._2025.Frontend.MVVM.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace di.proyecto.clase._2025.MVVM
 {
@@ -123,6 +119,74 @@ namespace di.proyecto.clase._2025.MVVM
             return correcto;
         }
 
+        private async Task<int> ObtenerNuevoIdArticulo()
+        {
+            try
+            {
+
+                List<Articulo> articulos = (List<Articulo>)await _articuloRepository.GetAllAsync();
+
+
+                int maxCodigo = articulos.Max(e => (int?)e.Idarticulo) ?? 0;
+
+                return maxCodigo + 1;
+            }
+            catch
+            {
+
+                return 1000;
+            }
+        }
+
+        private async void btn_Guardar_Click(object sender, RoutedEventArgs e)
+        {
+            Articulo articulo = new Articulo();
+
+            articulo.Idarticulo = await ObtenerNuevoIdArticulo();
+            RecogeDatos(articulo);
+
+            if (string.IsNullOrEmpty(articulo.Numserie) || string.IsNullOrEmpty(articulo.Estado) || articulo.ModeloNavigation == null)
+            {
+                MessageBox.Show("Los campos obligatorios no pueden estar vacíos.", "Validación", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                await _articuloRepository.AddAsync(articulo);
+                //await _context.SaveChangesAsync();
+                MessageBox.Show("Empleado guardado correctamente", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        // Método privado para recoger los datos del ViewModel y asignarlos al objeto Articulo.
+        // Este método debe rellenar las propiedades del objeto Articulo a partir de los datos del ViewModel.
+        // Puedes ajustar los campos según los datos que manejes en tu formulario.
+        private void RecogeDatos(Articulo articulo)
+        {
+            articulo.Numserie = _articulo.Numserie;
+            articulo.Estado = _articulo.Estado;
+            articulo.Fechaalta = _articulo.Fechaalta;
+            articulo.Fechabaja = _articulo.Fechabaja;
+            articulo.Usuarioalta = _articulo.Usuarioalta;
+            articulo.Usuariobaja = _articulo.Usuariobaja;
+            articulo.Modelo = _articulo.Modelo;
+            articulo.Departamento = _articulo.Departamento;
+            articulo.Espacio = _articulo.Espacio;
+            articulo.Dentrode = _articulo.Dentrode;
+            articulo.Observaciones = _articulo.Observaciones;
+            articulo.ModeloNavigation = _articulo.ModeloNavigation;
+            articulo.DepartamentoNavigation = _articulo.DepartamentoNavigation;
+            articulo.EspacioNavigation = _articulo.EspacioNavigation;
+            articulo.DentrodeNavigation = _articulo.DentrodeNavigation;
+            articulo.UsuarioaltaNavigation = _articulo.UsuarioaltaNavigation;
+            articulo.UsuariobajaNavigation = _articulo.UsuariobajaNavigation;
+        }
+
+
         public async Task<bool> GuardarArticuloAsync()
         {
             bool correcto = true;
@@ -131,12 +195,12 @@ namespace di.proyecto.clase._2025.MVVM
                 if (_articulo.Idarticulo == 0)
                 {
                     // Nuevo modelo de artículo
-                    await _modeloArticuloRepository.AddAsync(modeloArticulo);
+                    await _articuloRepository.AddAsync(articulo);
                 }
                 else
                 {
                     // Actualizar modelo de artículo existente
-                    await _modeloArticuloRepository.UpdateAsync(modeloArticulo);
+                    await _articuloRepository.UpdateAsync(articulo);
                 }
             }
             catch (Exception ex)
