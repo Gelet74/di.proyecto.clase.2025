@@ -72,6 +72,20 @@ TitleBarHeight="40"
                         Click="btnAddArticulo_Click"/>
 
                 </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox 
+      x:Name="AddUsuario"
+      Header="Usuario"
+      Margin="5">
+                    <Fluent:Button
+          LargeIcon="/Recursos/Iconos/listamodelos.png"
+          Header="Usuario"
+          Foreground="DarkOrange"
+          Margin="0,0,10,0"
+          x:Name="btnAddUsuario"
+          Click="btnAddUsuario_Click"/>
+
+                </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
     </Grid>

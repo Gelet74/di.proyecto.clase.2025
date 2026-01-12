@@ -197,7 +197,7 @@ namespace di.proyecto.clase._2025.Frontend.MVVM.Base
 
         private void UpdateHasErrors()
         {
-            HasErrors = errorCount > 0;
+            HasErrors = errorCount == 0;
 
         }
     }

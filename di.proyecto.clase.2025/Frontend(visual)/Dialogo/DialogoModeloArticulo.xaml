@@ -12,6 +12,7 @@
       d:DesignHeight="640" d:DesignWidth="600"
       Title="DialogoModeloArticulo"
       x:Name="diagModeloArticulo"
+      WindowStartupLocation="CenterScreen"           
       Loaded="diagModeloArticulo_Loaded">
     
     <Grid Margin="10">
@@ -20,7 +21,7 @@
         descripcion
         marca
         modelo
-        tipo(clave ajena=conbobox)
+        tipo(clave ajena=combobox)
         -->
         <!-- Rectangulo inicial -->
         <Grid Width="Auto"
@@ -52,12 +53,10 @@
         
         <!--NOMBRE-->
         <TextBox
-            x:Name="txtNombre"
             Text="{Binding modeloArticulo.Nombre,ValidatesOnDataErrors=True,
             NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
             Style="{StaticResource MaterialDesignTextBox}"
-            mat:HintAssist.Hint="Nombre*"
-            
+            mat:HintAssist.Hint="Nombre*"            
             FontWeight="Bold"
             Grid.Row="1"
             Grid.Column="0"
@@ -90,7 +89,8 @@
         <!--DESCRIPCION-->
         <TextBox
             x:Name="txtDescripcion"
-            Text="{Binding modeloArticulo.Descripcion}"
+            Text="{Binding modeloArticulo.Descripcion,ValidatesOnDataErrors=True,
+            NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
             Style="{StaticResource MaterialDesignTextBox}"
             mat:HintAssist.Hint="Descripcion*"
             FontWeight="Bold"
@@ -107,7 +107,8 @@
         <!--MARCA-->
         <TextBox
             x:Name="txtMarca"
-            Text="{Binding modeloArticulo.Marca}"
+            Text="{Binding modeloArticulo.Marca,ValidatesOnDataErrors=True,
+            NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
             Style="{StaticResource MaterialDesignTextBox}"
             mat:HintAssist.Hint="Marca*"
             FontWeight="Bold"
@@ -123,7 +124,8 @@
         <!--MODELO-->
         <TextBox
             x:Name="txtModelo"
-            Text="{Binding modeloArticulo.Modelo}"
+            Text="{Binding modeloArticulo.Modelo,ValidatesOnDataErrors=True,
+            NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
             Style="{StaticResource MaterialDesignTextBox}"
             mat:HintAssist.Hint="Modelo*"
             FontWeight="Bold"
@@ -142,6 +144,7 @@
             Grid.Row="4"
             Grid.Column="0"
             Content="Añadir"
+            IsEnabled="{Binding HasErrors}"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Width="200"
@@ -164,7 +167,7 @@
             Height="40"
             Margin="10"
             x:Name="btnCancelarModeloArticulo"
-            Click="btnCancelarModeloArticulo_Click"/>
+            Click="btnCancelarModeloArticulo_Click" Cursor="Hand"/>
     </Grid>
     </Grid>
 </mah:MetroWindow>

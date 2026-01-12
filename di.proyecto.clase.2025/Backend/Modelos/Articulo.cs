@@ -1,8 +1,9 @@
-﻿using System;
+﻿using di.proyecto.clase._2025.Frontend.MVVM.Base;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace di.proyecto.clase._2025.Backend.Modelos;
 
@@ -13,7 +14,7 @@ namespace di.proyecto.clase._2025.Backend.Modelos;
 [Index("Modelo", Name = "fk_modelos_articulo_idx")]
 [Index("Usuarioalta", Name = "fk_usuarioalta_articulo_idx")]
 [Index("Usuariobaja", Name = "fk_usuariobaja_modeloarticulo_idx")]
-public partial class Articulo
+public partial class Articulo : ValidatableViewModel
 {
     [Key]
     [Column("idarticulo")]
@@ -21,6 +22,8 @@ public partial class Articulo
 
     [Column("numserie")]
     [StringLength(45)]
+    [Required(ErrorMessage = "El numero de serie es obligatorio")]
+
     public string? Numserie { get; set; }
 
     [Column("estado")]
@@ -52,6 +55,7 @@ public partial class Articulo
     /// departamento al que pertenece o del que depende
     /// </summary>
     [Column("departamento")]
+
     public int? Departamento { get; set; }
 
     /// <summary>
@@ -75,10 +79,13 @@ public partial class Articulo
 
     [ForeignKey("Departamento")]
     [InverseProperty("Articulos")]
+    [Required(ErrorMessage = "El departamento es obligatorio")]
     public virtual Departamento? DepartamentoNavigation { get; set; }
 
     [ForeignKey("Espacio")]
     [InverseProperty("Articulos")]
+    [Required(ErrorMessage = "El espacio es obligatorio")]
+
     public virtual Espacio EspacioNavigation { get; set; } = null!;
 
     [InverseProperty("DentrodeNavigation")]
@@ -86,6 +93,7 @@ public partial class Articulo
 
     [ForeignKey("Modelo")]
     [InverseProperty("Articulos")]
+    [Required(ErrorMessage = "El modelo es obligatorio")]
     public virtual Modeloarticulo ModeloNavigation { get; set; } = null!;
 
     [InverseProperty("ArticuloNavigation")]

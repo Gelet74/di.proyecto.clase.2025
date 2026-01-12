@@ -1,22 +1,7 @@
-﻿using Castle.Core.Logging;
-using di.proyecto.clase._2025.Backend.Modelos;
-using di.proyecto.clase._2025.Backend.Servicios;
+﻿using di.proyecto.clase._2025.Backend.Servicios;
 using di.proyecto.clase._2025.Frontend.Mensajes;
 using MahApps.Metro.Controls;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace di.proyecto.clase._2025.Frontend_visual_.Dialogo
 {
@@ -33,6 +18,7 @@ namespace di.proyecto.clase._2025.Frontend_visual_.Dialogo
                     MainWindow mainWindow)
         {
             InitializeComponent();
+            txtUsuario.Focus();
             _mainWindow = mainWindow;
             _usuarioRepository = usuarioRepository;
         }
@@ -60,15 +46,13 @@ namespace di.proyecto.clase._2025.Frontend_visual_.Dialogo
                 //y añadimos el else en el caso de que no este en la bbdd
                 else
                 {
-                    MessageBox.Show("Por favor introduce usuario y clave.", "Error de autenticación",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                    MensajeInformacion.Mostrar("Error de autenticación", "Por favor introduce usuario y clave.");
                 }
             
             }
             else
             {
-                MessageBox.Show("Por favor introduce usuario y clave.", "Error de autenticación",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajeInformacion.Mostrar("Error de autenticación", "Por favor introduce usuario y clave.");
             }
 
 

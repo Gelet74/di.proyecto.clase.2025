@@ -10,6 +10,5 @@ namespace di.proyecto.clase._2025.Backend.Servicios_Repositorio_
 {
     public interface IArticuloRepository : IGenericRepository<Articulo>
     {
-        Task<int> GetLastCodigoEmpleadoAsync();
     }
 }

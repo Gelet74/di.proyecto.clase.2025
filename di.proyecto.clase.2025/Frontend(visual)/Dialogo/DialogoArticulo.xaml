@@ -9,6 +9,7 @@
       mc:Ignorable="d" 
       Height="640"
       Width="600"
+      WindowStartupLocation="CenterScreen"
       d:DesignHeight="640" d:DesignWidth="600"
       Title="DialogoArticulo"
       x:Name="diagArticulo"
@@ -71,55 +72,56 @@
                           Height="40"
                           FontWeight="Bold"
                           mat:HintAssist.Hint="Selecciona un modelo*"
-                          ItemsSource="{Binding listaModelosArticulos}"
                           Style="{StaticResource MaterialDesignComboBox}"
-                          DisplayMemberPath="Nombre"/>
+                          DisplayMemberPath="Nombre"
+                          ItemsSource="{Binding listaModelo}"
+                          SelectedItem="{Binding articulo.ModeloNavigation,
+                          ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <!-- Estado -->
                 <ComboBox x:Name="cmbEstado"
                           Width="230"
                           Height="40"
-                          
                           mat:HintAssist.Hint="Selecciona un estado"
-                          Style="{StaticResource MaterialDesignComboBox}"/>
+                          Style="{StaticResource MaterialDesignComboBox}"
+                          SelectedItem="{Binding articulo.Estado}"/>
             </StackPanel>
 
             <!-- Parte derecha -->
-            <StackPanel
-        HorizontalAlignment="Right"
-        VerticalAlignment="Top"
-        Width="300"
-        Margin="0,200,0,0">
+            <StackPanel HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Width="300"
+                        Margin="0,200,0,0">
 
                 <!-- Fecha alta -->
                 <DatePicker x:Name="dateAlta"
                             Width="230"
                             Height="40"
-                            SelectedDate="{Binding articulo.Fechaalta}"
                             mat:HintAssist.Hint="Selecciona una fecha"
-                            Style="{StaticResource MaterialDesignDatePicker}"/>
+                            Style="{StaticResource MaterialDesignDatePicker}"
+                            SelectedDate="{Binding articulo.Fechaalta, Mode=OneWay,
+                            UpdateSourceTrigger=PropertyChanged}"/>
 
                 <!-- Usuario -->
                 <ComboBox x:Name="cmbUsuario"
                           Width="230"
                           Height="40"
-                          ItemsSource="{Binding listaUsuarios}"
-                          SelectedItem="{Binding articulo.UsuarioaltaNavigation}"
                           mat:HintAssist.Hint="Selecciona un usuario"
                           Style="{StaticResource MaterialDesignComboBox}"
-                          DisplayMemberPath="Nombre"/>
-
-
+                          DisplayMemberPath="Nombre"
+                          ItemsSource="{Binding listaUsuarios}"
+                          SelectedItem="{Binding articulo.UsuarioaltaNavigation}"/>
             </StackPanel>
             <!-- Número de serie -->
             <TextBox x:Name="SerieTextBox"
                      MaxLength="45"
                      FontWeight="Bold"
-                     Text="{Binding articulo.Numserie, UpdateSourceTrigger=PropertyChanged}"
                      mat:HintAssist.Hint="Numero de Serie* (Debe ser único)"
                      mat:HintAssist.IsFloating="True"
                      VerticalAlignment="Top"
-                     Margin="31,303,31,0"/>
+                     Margin="31,303,31,0"
+                     Text="{Binding articulo.Numserie,
+                ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
 
         </Grid>
         <!-- Segunda parte del formulario-->
@@ -133,7 +135,7 @@
                 HorizontalAlignment="Left"
                 FontSize="26"
                 Foreground="Red"
-                />      
+                />
             <!-- Definición de la línea -->
             <Line
                 X1="10"
@@ -156,9 +158,11 @@
                           Height="40"
                           FontWeight="Bold"
                           mat:HintAssist.Hint="Selecciona un departamento*"
-                          ItemsSource="{Binding listaDepartamentos}"
                           Style="{StaticResource MaterialDesignComboBox}"
-                          DisplayMemberPath="Nombre"/>
+                          DisplayMemberPath="Nombre"
+                          ItemsSource="{Binding listaDepartamento}"
+                          SelectedItem="{Binding articulo.DepartamentoNavigation,
+                    ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
 
             </StackPanel>
 
@@ -168,20 +172,22 @@
                 VerticalAlignment="Top"
                 Width="300"
                 Margin="0,200,0,0">
-                
+
                 <!-- Espacio -->
                 <ComboBox x:Name="cmbEspacio"
                           Width="230"
                           Height="40"
                           FontWeight="Bold"
-                          ItemsSource="{Binding listaEspacios}"
                           mat:HintAssist.Hint="Selecciona un espacio*"
                           Style="{StaticResource MaterialDesignComboBox}"
-                          DisplayMemberPath="Nombre"/>
+                          DisplayMemberPath="Nombre"
+                          ItemsSource="{Binding listaEspacio}"
+                          SelectedItem="{Binding articulo.EspacioNavigation,
+                    ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
 
             </StackPanel>
             <!-- Campo de texto con límite de 45 caracteres -->
-            
+
             <!-- Observaciones -->
             <TextBlock Text="Observaciones"
                        Margin="31,270,31,0"
@@ -190,7 +196,8 @@
             <TextBox x:Name="txtObservaciones"
                      mat:HintAssist.IsFloating="False"
                      VerticalAlignment="Top"
-                     Margin="31,285,31,0"/>
+                     Margin="31,285,31,0"
+                     Text="{Binding articulo.Observaciones}"/>
         </Grid>
 
         <StackPanel 
@@ -219,7 +226,10 @@
                 Content="Guardar"
                 x:Name="btnGuardarArticulo"
                 Click="btnGuardarArticulo_Click"
-                Style="{StaticResource MaterialDesignFlatButton}" />
+                Style="{StaticResource MaterialDesignFlatButton}"
+                IsEnabled="{Binding HasErrors}"/>
+            <!--para deshabilitar el boton-->
+
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

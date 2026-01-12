@@ -20,70 +20,74 @@ namespace di.proyecto.clase._2025
         //ahorrar codigo en los .cs del login en este caso, de esta forma
         //no tendremos que poner new...
 
-            private DiinventarioexamenContext _contexto;
-            /// Propiedad para almacenar el proveedor de servicios
-            private IServiceProvider _serviceProvider;
-            /// <summary>
-            /// Constructor de la clase App
-            /// </summary>
-            public App()
-            {
-                // Configurar el contenedor de inyección de dependencias
-                var serviceCollection = new ServiceCollection();
-                // Configurar los servicios
-                ConfigureServices(serviceCollection);
-                // Construir el proveedor de servicios
-                _serviceProvider = serviceCollection.BuildServiceProvider();
-                _contexto = new DiinventarioexamenContext();
-            }
+        private DiinventarioexamenContext _contexto;
+        /// Propiedad para almacenar el proveedor de servicios
+        private IServiceProvider _serviceProvider;
+        /// <summary>
+        /// Constructor de la clase App
+        /// </summary>
+        public App()
+        {
+            // Configurar el contenedor de inyección de dependencias
+            var serviceCollection = new ServiceCollection();
+            // Configurar los servicios
+            ConfigureServices(serviceCollection);
+            // Construir el proveedor de servicios
+            _serviceProvider = serviceCollection.BuildServiceProvider();
+            _contexto = new DiinventarioexamenContext();
+        }
 
-            //Inyecta automaticamente la BBDD 
-            private void ConfigureServices(ServiceCollection services)
-            {
-                // Configurar el contexto de la base de datos
-                services.AddDbContext<DiinventarioexamenContext>();
-                // Configurar el servicio de logging
-                services.AddLogging(static configure => configure.AddConsole());
-                // Registrar repositorios genéricos
-                services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-                // Registrar servicios y vistas aquí
-                // En primer lugar registramos la ventana principal
-                services.AddSingleton<MainWindow>();
-                // A continuación, registramos los repositorios específicos
-                // Lo hacemos con AddScoped para que se cree una nueva instancia
-                // de cada repositorio por cada petición
-                // Esto es útil para evitar problemas de concurrencia
-                services.AddScoped<IGenericRepository<Tipoarticulo>, TipoArticuloRepository>();
-                services.AddScoped<IGenericRepository<Modeloarticulo>, ModeloArticuloRepository>();
-                services.AddScoped<IGenericRepository<Articulo>, ArticuloRepository>();
-                services.AddScoped<IGenericRepository<Usuario>, UsuarioRepository>();
-                // Registramos los servicios específicos
-                services.AddScoped<UsuarioRepository>();
-                services.AddScoped<ArticuloRepository>();
-                services.AddScoped<ModeloArticuloRepository>();
-                services.AddScoped<TipoArticuloRepository>();
-                services.AddScoped<DepartamentoRepository>();
-                services.AddScoped<EspacioRepository>();
-                // Registramos las interfaces de usuario
-                services.AddTransient<Login>();
-                //services.AddTransient<UCArticulos>();
-                services.AddTransient<DialogoModeloArticulo>();
-                services.AddTransient<DialogoArticulo>();
+        //Inyecta automaticamente la BBDD 
+        private void ConfigureServices(ServiceCollection services)
+        {
+            // Configurar el contexto de la base de datos
+            services.AddDbContext<DiinventarioexamenContext>();
+            // Configurar el servicio de logging
+            services.AddLogging(static configure => configure.AddConsole());
+            // Registrar repositorios genéricos
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            // Registrar servicios y vistas aquí
+            // En primer lugar registramos la ventana principal
+            services.AddSingleton<MainWindow>();
+            // A continuación, registramos los repositorios específicos
+            // Lo hacemos con AddScoped para que se cree una nueva instancia
+            // de cada repositorio por cada petición
+            // Esto es útil para evitar problemas de concurrencia
+            services.AddScoped<IGenericRepository<Tipoarticulo>, TipoArticuloRepository>();
+            services.AddScoped<IGenericRepository<Modeloarticulo>, ModeloArticuloRepository>();
+            services.AddScoped<IGenericRepository<Articulo>, ArticuloRepository>();
+            services.AddScoped<IGenericRepository<Usuario>, UsuarioRepository>();
+            // Registramos los servicios específicos
+            services.AddScoped<UsuarioRepository>();
+            services.AddScoped<ArticuloRepository>();
+            services.AddScoped<ModeloArticuloRepository>();
+            services.AddScoped<TipoArticuloRepository>();
+            services.AddScoped<DepartamentoRepository>();
+            services.AddScoped<EspacioRepository>();
+            services.AddScoped<GrupoRepository>();
+            services.AddScoped<RolRepository>();
+            services.AddScoped<TipoUsuarioRepository>();
+            // Registramos las interfaces de usuario
+            services.AddTransient<Login>();
+            //services.AddTransient<UCArticulos>();
+            services.AddTransient<DialogoModeloArticulo>();
+            services.AddTransient<DialogoArticulo>();
+            services.AddTransient<DialogoUsuario>();
 
-                //Registramos los objetos MVVM,
-                //el framework recomienda que los MV sean transient.
-                services.AddTransient<MVArticulo>();
-            }
+            //Registramos los objetos MVVM,
+            //el framework recomienda que los MV sean transient.
+            services.AddTransient<MVArticulo>();
+        }
 
-            //ESTE CODIGO HACE QUE EL LOGIN SEA LA PRIMERA VENTANA EN ABRIRSE AL EJECUTAR
-            protected override void OnStartup(StartupEventArgs e)
-            {
-                // Se genera la ventana de Login
-                //esto es como un new
-                var loginWindow = _serviceProvider.GetService<Login>();
-                loginWindow.Show();
-                base.OnStartup(e);
-            }
+        //ESTE CODIGO HACE QUE EL LOGIN SEA LA PRIMERA VENTANA EN ABRIRSE AL EJECUTAR
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            // Se genera la ventana de Login
+            //esto es como un new
+            var loginWindow = _serviceProvider.GetService<Login>();
+            loginWindow.Show();
+            base.OnStartup(e);
         }
     }
+}
 

@@ -1,19 +1,7 @@
-﻿using di.proyecto.clase._2025.Backend.Servicios;
-using di.proyecto.clase._2025.Backend.Servicios_Repositorio_;
-using di.proyecto.clase._2025.Frontend_visual_.Dialogo;
+﻿using di.proyecto.clase._2025.Frontend_visual_.Dialogo;
 using Fluent;
-using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace di.proyecto.clase._2025
 {
@@ -24,25 +12,38 @@ namespace di.proyecto.clase._2025
     {
         private DialogoArticulo _dialogoArticulo;
         private DialogoModeloArticulo _dialogoModeloArticulo;
+        private DialogoUsuario _dialogoUsuario;
+        private readonly IServiceProvider _serviceProvider;
         //serviceprovider se encarga de crear los new automaticamente
         public MainWindow(DialogoModeloArticulo dialogoModeloArticulo,
-                          DialogoArticulo dialogoArticulo)
+                          DialogoArticulo dialogoArticulo,
+                          DialogoUsuario dialogoUsuario,
+                          IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _dialogoArticulo = dialogoArticulo;
             _dialogoModeloArticulo = dialogoModeloArticulo;
+            _dialogoUsuario = dialogoUsuario;
+            _serviceProvider = serviceProvider;
         }
 
         private void btnAddModeloArticulo_Click(object sender, RoutedEventArgs e)
         {
+            _dialogoModeloArticulo = _serviceProvider.GetRequiredService<DialogoModeloArticulo>();
             _dialogoModeloArticulo.ShowDialog();
-
+            
         }
 
         private void btnAddArticulo_Click(object sender, RoutedEventArgs e)
         {
+            _dialogoArticulo = _serviceProvider.GetRequiredService<DialogoArticulo>();
             _dialogoArticulo.ShowDialog();
         }
 
+        private void btnAddUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            _dialogoUsuario = _serviceProvider.GetRequiredService<DialogoUsuario>();
+            _dialogoUsuario.ShowDialog();
+        }
     }
 }

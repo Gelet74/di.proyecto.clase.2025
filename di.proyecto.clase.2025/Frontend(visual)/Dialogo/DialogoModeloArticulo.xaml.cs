@@ -1,4 +1,5 @@
-﻿using di.proyecto.clase._2025.MVVM;
+﻿using di.proyecto.clase._2025.Frontend.Mensajes;
+using di.proyecto.clase._2025.MVVM;
 using MahApps.Metro.Controls;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,25 +31,29 @@ namespace di.proyecto.clase._2025.Frontend_visual_.Dialogo
         //Botones por activar
         private async void btnAnyadirModeloArticulo_Click(object sender, RoutedEventArgs e)
         {
+            if (!_mvArticulo.IsValid(this))
+            {
+                MensajeInformacion.Mostrar("Error de validación", "Hay errores de validación en el formulario. Por favor, corríjalos antes de continuar.");
+                return;
+            }
             try
             {
                 bool guardado = await _mvArticulo.GuardarModeloArticuloAsync();
                 if (guardado)
                 {
-                    MessageBox.Show("Modelo de artículo guardado correctamente",
-                                    "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MensajeInformacion.Mostrar("Éxito", "Modelo de artículo guardado correctamente");
                     DialogResult = true; // cerrar ventana indicando éxito
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar el modelo de artículo",
-                                    "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MensajeError.Mostrar("Error al guardar el modelo de artículo",
+                                    "Error");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error inesperado: " + ex.Message,
-                                "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajeError.Mostrar("Error inesperado: " + ex.Message,
+                                "Error");
             }
         }
 

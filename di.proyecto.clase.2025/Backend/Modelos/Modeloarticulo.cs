@@ -9,7 +9,7 @@ namespace di.proyecto.clase._2025.Backend.Modelos;
 
 [Table("modeloarticulo")]
 [Index("Tipo", Name = "fk_tipoarticulos_modeloarticulo_idx")]
-public partial class Modeloarticulo : ValidatableViewModel 
+public partial class Modeloarticulo : ValidatableViewModel
 {
     /// <summary>
     /// Es un catalogo de articulos existentes. De cada modelo puede haber varias unidades con distintos numeros de serie, etc
@@ -20,7 +20,7 @@ public partial class Modeloarticulo : ValidatableViewModel
 
     [Column("nombre")]
     [StringLength(45)]
-    [Required]
+    [Required(ErrorMessage = "El Nombre es obligatorio")]
     public string? Nombre { get; set; }
 
     [Column("descripcion", TypeName = "mediumtext")]
@@ -28,7 +28,8 @@ public partial class Modeloarticulo : ValidatableViewModel
 
     [Column("marca")]
     [StringLength(255)]
-    [Required]
+    [Required(ErrorMessage = "La Marca es obligatoria")]
+
     public string? Marca { get; set; }
 
     [Column("modelo")]
@@ -36,6 +37,7 @@ public partial class Modeloarticulo : ValidatableViewModel
     public string? Modelo { get; set; }
 
     [Column("tipo")]
+
     public int? Tipo { get; set; }
 
     [InverseProperty("ModeloNavigation")]
@@ -46,6 +48,6 @@ public partial class Modeloarticulo : ValidatableViewModel
 
     [ForeignKey("Tipo")]
     [InverseProperty("Modeloarticulos")]
-    [Required]
+    [Required(ErrorMessage = "El Tipo es obligatorio")]
     public virtual Tipoarticulo? TipoNavigation { get; set; }
 }

@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\mvvm\\mvarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\mvvm\\mvarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\frontend(visual)\\dialogo\\dialogomodeloarticulo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\frontend(visual)\\dialogo\\dialogomodeloarticulo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\frontend(visual)\\dialogo\\dialogousuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\frontend(visual)\\dialogo\\dialogousuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\backend\\modelos\\modeloarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\backend\\modelos\\modeloarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\frontend(visual)\\dialogo\\dialogomodeloarticulo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\frontend(visual)\\dialogo\\dialogomodeloarticulo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|c:\\users\\windows10\\desktop\\2\u00BA dam\\dise\u00F1o interface\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53388B5D-5A47-41B1-833B-952242C924E1}|di.proyecto.clase.2025\\di.proyecto.clase.2025.csproj|solutionrelative:di.proyecto.clase.2025\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,52 +27,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MVArticulo.cs",
-              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\MVVM\\MVArticulo.cs",
-              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\MVVM\\MVArticulo.cs",
-              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\MVVM\\MVArticulo.cs",
-              "RelativeToolTip": "di.proyecto.clase.2025\\MVVM\\MVArticulo.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAowMoAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T07:59:55.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Modeloarticulo.cs",
-              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Backend\\Modelos\\Modeloarticulo.cs",
-              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\Backend\\Modelos\\Modeloarticulo.cs",
-              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Backend\\Modelos\\Modeloarticulo.cs",
-              "RelativeToolTip": "di.proyecto.clase.2025\\Backend\\Modelos\\Modeloarticulo.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T07:32:22.66Z",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\MainWindow.xaml",
+              "RelativeToolTip": "di.proyecto.clase.2025\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-12T09:38:35.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DialogoModeloArticulo.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml.cs",
-              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml.cs",
-              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml.cs",
-              "RelativeToolTip": "di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T07:29:35.754Z",
+              "Title": "DialogoUsuario.xaml",
+              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoUsuario.xaml",
+              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoUsuario.xaml",
+              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoUsuario.xaml",
+              "RelativeToolTip": "di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoUsuario.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-12T09:37:18.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DialogoModeloArticulo.xaml",
-              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml",
-              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml",
-              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml",
-              "RelativeToolTip": "di.proyecto.clase.2025\\Frontend(visual)\\Dialogo\\DialogoModeloArticulo.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-07T07:22:10.093Z",
+              "DocumentIndex": 2,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\App.xaml.cs",
+              "RelativeDocumentMoniker": "di.proyecto.clase.2025\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\windows10\\Desktop\\2\u00BA DAM\\DISE\u00D1O INTERFACE\\di.proyecto.clase.2025\\di.proyecto.clase.2025\\App.xaml.cs",
+              "RelativeToolTip": "di.proyecto.clase.2025\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T09:30:35.713Z",
               "EditorCaption": ""
             }
           ]

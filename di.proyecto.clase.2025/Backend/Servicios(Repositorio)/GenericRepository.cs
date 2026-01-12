@@ -237,23 +237,7 @@ using System.Linq.Expressions;
                 }
             }
 
-        public async Task<IEnumerable<T>> QueryAsync(Func<IQueryable<T>, IQueryable<T>> query)
-        {
-            //Logger.Info("QueryAsync: entidad={0}", typeof(T).FullName);
-            try
-            {
-                if (query == null) throw new ArgumentNullException(nameof(query));
-                var q = query(_dbSet.AsQueryable());
-                return await q.AsNoTracking().ToListAsync().ConfigureAwait(false);
-            }
-            catch (Exception ex)
-            {
-                //Logger.Error(ex, "QueryAsync fallo.");
-                throw;
-            }
-        }
-
-        public async Task<int> SaveChangesAsync()
+            public async Task<int> SaveChangesAsync()
             {
                 try
                 {
