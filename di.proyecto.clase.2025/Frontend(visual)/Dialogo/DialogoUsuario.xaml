@@ -1,0 +1,297 @@
+﻿<mah:MetroWindow x:Class="di.proyecto.clase._2025.Frontend_visual_.Dialogo.DialogoUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:di.proyecto.clase._2025.Frontend_visual_.Dialogo"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="DialogoUsuario" Height="710" Width="600"
+        x:Name="diagUsuario"
+        Loaded="diagUsuario_Loaded">
+    <Grid>
+        <!-- Rectangulo inicial -->
+        <Grid 
+            Width="Auto"
+            Height="100"
+            Margin="0,0,0,20"
+            VerticalAlignment="Top">
+            <Rectangle
+                Fill="#454545"/>
+            <TextBlock
+                Text="INSERTAR USUARIO"
+                FontSize="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="White"/>
+        </Grid>
+
+        <!-- Formulario -->
+        <Grid Margin="5">
+            <TextBlock
+                Text="Los campos con asterico son obligatorios"
+                Margin="10,100,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                FontSize="16"
+                FontWeight="Bold"
+                />
+            <TextBlock
+                Text="DATOS DEL USUARIO"
+                Margin="10,140,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                FontSize="26"
+                Foreground="Red"
+                />
+
+            <Separator
+                Margin="10,180,0,0"
+                Width="550"
+                Background="DarkGray"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"/>
+
+            <StackPanel
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="300"
+                Margin="0,190,0,0">
+
+                <!-- Usuario -->
+                <TextBox 
+                     MaxLength="20"
+                     Width="230"
+                     Height="40"
+                    Margin="0,0,0,10"
+                     FontWeight="Bold"
+                     mat:HintAssist.Hint="Usuario*"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Username, 
+                    ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!-- Contraseña -->
+                <TextBox 
+                     MaxLength="200"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     FontWeight="Bold"
+                     mat:HintAssist.Hint="Contraseña*"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Password
+                    ,ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox 
+                  Width="230"
+                  Height="40"
+                  Margin="0,0,0,10"
+                  mat:HintAssist.Hint="Tipo*"
+                  FontWeight="Bold"
+                  Style="{StaticResource MaterialDesignComboBox}"
+                    ItemsSource="{Binding listaTipoUsuario}"
+                    SelectedItem="{Binding usuario.TipoNavigation,
+                    ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
+                    DisplayMemberPath="Nombre"/>
+
+            </StackPanel>
+
+            <!-- Parte derecha -->
+            <StackPanel
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="300"
+                Margin="0,190,0,0">
+
+                
+                <!-- Usuario -->
+                <ComboBox
+                      Width="230"
+                      Height="40"
+                      Margin="0,0,0,10"
+                      mat:HintAssist.Hint="Rol*"
+                      FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                    ItemsSource="{Binding listaRol}"
+                    SelectedItem="{Binding usuario.RolNavigation
+                    ,ValidatesOnDataErrors=True,NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
+                    DisplayMemberPath="Nombre"/>
+
+                <TextBox 
+                     MaxLength="10"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Grupo"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Grupo, 
+                     UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <ComboBox
+                      Width="230"
+                      Height="40"
+                      Margin="0,0,0,10"
+                      mat:HintAssist.Hint="Departamento"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                    ItemsSource="{Binding listaDepartamento}"
+SelectedItem="{Binding usuario.DepartamentoNavigation}"
+DisplayMemberPath="Nombre"/>
+                
+            </StackPanel>
+
+            <TextBlock
+                Text="DATOS PERSONALES"
+                Margin="10,350,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                FontSize="26"
+                Foreground="Red"
+                />
+
+            <Separator
+                Margin="10,390,0,0"
+                Width="550"
+                Background="DarkGray"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"/>
+
+            <StackPanel
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="300"
+                Margin="0,400,0,0">
+
+
+                <TextBox 
+                     MaxLength="45"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Nombre"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Nombre, 
+                    UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                     MaxLength="45"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Primer apellido"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Apellido1, 
+UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                     MaxLength="45"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Segundo apellido"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Apellido2, 
+UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                     MaxLength="45"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Domicilio"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Domicilio, 
+UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            
+            <StackPanel
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Width="300"
+                Margin="0,400,0,0">
+
+
+                <TextBox 
+                     MaxLength="45"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Población"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Poblacion, 
+UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                     MaxLength="10"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Codigo postal"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Codpostal, 
+UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                     MaxLength="100"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Email"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Email, 
+UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox 
+                     MaxLength="20"
+                     Width="230"
+                     Height="40"
+                     Margin="0,0,0,10"
+                     mat:HintAssist.Hint="Telefono"
+                     mat:HintAssist.IsFloating="True"
+                     VerticalAlignment="Top"
+                    Text="{Binding usuario.Telefono, 
+UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+        </Grid>
+        
+        
+        
+
+        <StackPanel 
+            Orientation="Horizontal"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0,10,31,20">
+            <Button
+                Background="Red"
+                Foreground="White"
+                BorderBrush="Red"
+                BorderThickness="2"
+                Width="100"
+                Height="35"
+                Margin="0,0,20,0"
+                Content="Cancelar"
+                x:Name="btnCancelarUsuario"
+                Click="btnCancelarUsuario_Click"
+                Style="{StaticResource MaterialDesignFlatButton}" />
+            <Button
+                BorderBrush="Red"
+                BorderThickness="2"
+                Foreground="Red"
+                Width="100"
+                Height="35"
+                Content="Guardar"
+                x:Name="btnGuardarUsuario"
+                Click="btnGuardarUsuario_Click"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                IsEnabled="{Binding HasErrors}"/>
+        </StackPanel>
+        
+        
+    </Grid>
+</mah:MetroWindow>
