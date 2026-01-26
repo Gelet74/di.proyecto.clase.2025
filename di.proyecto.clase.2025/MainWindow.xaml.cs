@@ -1,4 +1,5 @@
-﻿using di.proyecto.clase._2025.Frontend_visual_.Dialogo;
+﻿using di.proyecto.clase._2025.Backend.Modelos;
+using di.proyecto.clase._2025.Frontend_visual_.Dialogo;
 using di.proyecto.clase._2025.Frontend_visual_.UC;
 using Fluent;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,9 +38,10 @@ namespace di.proyecto.clase._2025
             _ucListadoUsuarios = ucListadoUsuarios;
         }
 
-        private void btnAddModeloArticulo_Click(object sender, RoutedEventArgs e)
+        private async void btnAddModeloArticulo_Click(object sender, RoutedEventArgs e)
         {
             _dialogoModeloArticulo = _serviceProvider.GetRequiredService<DialogoModeloArticulo>();
+            await _dialogoModeloArticulo.Inicializa(new Modeloarticulo());
             _dialogoModeloArticulo.ShowDialog();
         }
 

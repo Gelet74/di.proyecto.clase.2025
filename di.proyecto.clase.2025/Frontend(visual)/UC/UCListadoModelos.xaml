@@ -55,8 +55,8 @@
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="Eliminar"
-                                    x:Name="miEliminarModeloArtículo"
-                                    Click="miEliminarModeloArtículo_Click">
+                                  x:Name="miEliminarModeloArtículo"
+                                  Click="miEliminarModeloArtículo_Click">
                             <MenuItem.Icon>
                                 <Image Source="/Recursos/Iconos/icono_borrar.png" Width="32" Height="32"/>
                             </MenuItem.Icon>

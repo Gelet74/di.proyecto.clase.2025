@@ -233,11 +233,6 @@ namespace di.proyecto.clase._2025.MVVM
         {
             int? ultimoId = await _articuloRepository.GetUltimoIdAsync();
             return ((int)ultimoId + 1);
-        }
-
-       
-
-
-
+        }        
     }
 }
