@@ -13,6 +13,8 @@
     <None Remove="Recursos\Iconos\articulo.png" />
     <None Remove="Recursos\Iconos\devolucion.png" />
     <None Remove="Recursos\Iconos\escudologin5.png" />
+    <None Remove="Recursos\Iconos\icono_borrar.png" />
+    <None Remove="Recursos\Iconos\icono_editar.png" />
     <None Remove="Recursos\Iconos\listamodelos.png" />
     <None Remove="Recursos\Iconos\salida.png" />
     <None Remove="Recursos\Imagenes\error.jpg" />
@@ -42,6 +44,8 @@
     <Resource Include="Recursos\Iconos\articulo.png" />
     <Resource Include="Recursos\Iconos\devolucion.png" />
     <Resource Include="Recursos\Iconos\escudologin5.png" />
+    <Resource Include="Recursos\Iconos\icono_borrar.png" />
+    <Resource Include="Recursos\Iconos\icono_editar.png" />
     <Resource Include="Recursos\Iconos\listamodelos.png" />
     <Resource Include="Recursos\Iconos\salida.png" />
     <Resource Include="Recursos\Imagenes\error.jpg" />

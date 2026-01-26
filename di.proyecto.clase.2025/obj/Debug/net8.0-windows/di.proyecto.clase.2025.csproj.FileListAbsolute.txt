@@ -1741,3 +1741,4 @@ C:\Users\windows10\Desktop\2º DAM\DISEÑO INTERFACE\di.proyecto.clase.2025\di.p
 C:\Users\windows10\Desktop\2º DAM\DISEÑO INTERFACE\di.proyecto.clase.2025\di.proyecto.clase.2025\obj\Debug\net8.0-windows\Frontend(visual)\UC\UCListadoArtículos.baml
 C:\Users\windows10\Desktop\2º DAM\DISEÑO INTERFACE\di.proyecto.clase.2025\di.proyecto.clase.2025\obj\Debug\net8.0-windows\Frontend(visual)\UC\UCListadoUsuarios.g.cs
 C:\Users\windows10\Desktop\2º DAM\DISEÑO INTERFACE\di.proyecto.clase.2025\di.proyecto.clase.2025\obj\Debug\net8.0-windows\Frontend(visual)\UC\UCListadoUsuarios.baml
+C:\Users\windows10\Desktop\2º DAM\DISEÑO INTERFACE\di.proyecto.clase.2025\di.proyecto.clase.2025\obj\Debug\net8.0-windows\di.proyecto.clase.2025.sourcelink.json

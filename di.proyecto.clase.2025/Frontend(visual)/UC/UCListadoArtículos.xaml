@@ -86,6 +86,44 @@
 
 
                 </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <Grid DockPanel.Dock="Top">
+                                <TextBlock Text="LISTADO DE PRÉSTAMOS DEL ARTÍCULO"
+                                           FontSize="14" FontWeight="Bold" Margin="10"/>
+                            </Grid>
+                            <Grid>
+                                <ListBox ItemsSource="{Binding Salida}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="5">
+                                                <StackPanel>
+                                                    <TextBlock>
+                                                        <Run Text="Usuario: "/>
+                                                        <Run Text="{Binding UsuarioprestamoNavigation.Nombre}"/>
+                                                        <Run Text=" "/>
+                                                        <Run Text="{Binding UsuarioprestamoNavigation.Apellido1}"/>
+                                                        <Run Text=" "/>
+                                                        <Run Text="{Binding UsuarioprestamoNavigation.Apellido2}"/>
+                                                    </TextBlock>
+                                                    <TextBlock>
+                                                        <Run Text="Fecha Préstamo: "/>
+                                                        <Run Text="{Binding Fechaprestamo, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                                    </TextBlock>
+                                                    <TextBlock>
+                                                        <Run Text="Fecha Devolución: "/>
+                                                        <Run Text="{Binding Fechadevolucion, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>                                
+                        </DockPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
             </DataGrid>
 
         </Grid>

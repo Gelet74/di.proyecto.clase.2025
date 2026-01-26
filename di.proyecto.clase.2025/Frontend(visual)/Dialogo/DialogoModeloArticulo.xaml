@@ -11,8 +11,7 @@
       Width="600"
       WindowStartupLocation="CenterScreen"           
       Title="DialogoModeloArticulo"
-      x:Name="diagModeloArticulo"
-      Loaded="diagModeloArticulo_Loaded">
+      x:Name="diagModeloArticulo">
 
     <Grid Margin="10">
         <!-- Rectangulo inicial -->

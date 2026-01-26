@@ -3,12 +3,7 @@ using di.proyecto.clase._2025.Backend.Servicios;
 using di.proyecto.clase._2025.Backend.Servicios_Repositorio_;
 using di.proyecto.clase._2025.Frontend.Mensajes;
 using di.proyecto.clase._2025.Frontend.MVVM.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Data;
 
 namespace di.proyecto.clase._2025.MVVM
 {
@@ -64,6 +59,14 @@ namespace di.proyecto.clase._2025.MVVM
         #endregion
         #region Getters y Setters
         public List<Tipoarticulo> listaTiposArticulos => _listaTipoArticulos;
+
+        private ListCollectionView _listaModelosArticulosView;
+
+        public ListCollectionView listaModelosArticulos
+        {
+            get => _listaModelosArticulosView;
+            set => SetProperty(ref _listaModelosArticulosView, value);
+        }
 
         public List<Usuario> listaUsuarios => _listaUsuarios;
         public List<Modeloarticulo> listaModelo => _listaModeloArticulo;
@@ -135,7 +138,7 @@ namespace di.proyecto.clase._2025.MVVM
                 _listaEspacio = await GetAllAsync<Espacio>(_espacioRepository);
                 _listaModeloArticulo = await GetAllAsync(_modeloArticuloRepository);
                 _listaUsuarios = await _usuarioRepository.GetAllAsync();
-
+                listaModelosArticulos=new ListCollectionView(_listaModeloArticulo);
 
                 _listaEstado = new List<string> { "Nuevo", "Usado", "Reparado", "Baja" };
 
@@ -193,7 +196,7 @@ namespace di.proyecto.clase._2025.MVVM
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajeError.Mostrar("Error", "Error al guardar: " + ex.Message);
                 correcto = false;
             }
             return correcto;
@@ -218,7 +221,7 @@ namespace di.proyecto.clase._2025.MVVM
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar usuario:\n" + ex.Message);
+                MensajeError.Mostrar("ERROR", "Error al guardar usuario:\n");
                 correcto = false;
             }
 

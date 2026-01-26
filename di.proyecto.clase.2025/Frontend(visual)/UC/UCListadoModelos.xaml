@@ -18,8 +18,9 @@
                 Foreground="Black"/>
         </Grid>
         <Grid>
-            <DataGrid ItemsSource="{Binding listaModelo}"
+            <DataGrid ItemsSource="{Binding listaModelo}" IsReadOnly="True"
                       AutoGenerateColumns="False"
+                      SelectedItem="{Binding modeloArticulo}"
                       CanUserAddRows="False"
                       ColumnWidth="*">
                 <!--CanUserAddRows:para evitar que aparezca linea en blanco al final-->
@@ -44,6 +45,24 @@
                     <DataGridTextColumn Header="DESCRIPCIÓN"
                     Binding="{Binding Descripcion}"/>
                 </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Editar Modelo"
+                                  x:Name="miEditarModeloArtículo"
+                                  Click="miEditarModeloArtículo_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/Recursos/Iconos/icono_editar.png" Width="24" Height="24"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Eliminar"
+                                    x:Name="miEliminarModeloArtículo"
+                                    Click="miEliminarModeloArtículo_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/Recursos/Iconos/icono_borrar.png" Width="32" Height="32"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
             </DataGrid>
         </Grid>
     </DockPanel>
